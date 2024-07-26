@@ -1,6 +1,7 @@
 package com.jlw.filter;
 
 import com.alibaba.fastjson.JSON;
+import com.jlw.utils.BaseContext;
 import com.jlw.utils.R;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.util.AntPathMatcher;
@@ -14,7 +15,7 @@ import java.io.IOException;
 /**
  * @program: reggie_take_out
  * @description: 过滤器
- * @author: lydms
+ * @author: jlw
  * @create: 2024-07-25 09:41
  **/
 @WebFilter(filterName = "loginCheckFilter",urlPatterns = "/*")
@@ -47,6 +48,9 @@ public class LoginCheckFilter implements Filter {
           //判断登录状态，如果已登录则放行
         if (request.getSession().getAttribute("employee")!=null){
             log.info("用户已登录");
+            Long empId = (Long) request.getSession().getAttribute("employee");
+            BaseContext.setCurrentId(empId);
+
             filterChain.doFilter(request,response);
             return;
         }

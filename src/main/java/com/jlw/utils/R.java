@@ -8,7 +8,7 @@ import java.util.Map;
 * @Description: 通用返回结果类
 * @Param: 
 * @return: 
-* @Author: lydms
+* @Author: jlw
 * @Date: 
 */
 @Data

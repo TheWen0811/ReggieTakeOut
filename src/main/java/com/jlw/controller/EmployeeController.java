@@ -17,7 +17,7 @@ import java.time.LocalDateTime;
 /**
  * @program: reggie_take_out
  * @description:员工登录
- * @author: lydms
+ * @author: jlw
  * @create: 2024-07-24 12:13
  **/
 @Slf4j
@@ -53,7 +53,7 @@ public class EmployeeController {
     * @Description: 员工退出
     * @Param: 
     * @return: 
-    * @Author: lydms
+    * @Author: jlw
     * @Date: 
     */
     @PostMapping("/logout")
@@ -68,8 +68,8 @@ public class EmployeeController {
         //设置初始密码123456，用md5加密处理
         employee.setPassword(DigestUtils.md5DigestAsHex("123456".getBytes()));
 
-        employee.setCreateTime(LocalDateTime.now());
-        employee.setUpdateTime(LocalDateTime.now());
+//        employee.setCreateTime(LocalDateTime.now());
+//        employee.setUpdateTime(LocalDateTime.now());
         //获得当前登录用户ID
         Long empId = (Long) request.getSession().getAttribute("employee");
         employee.setCreateUser(empId);

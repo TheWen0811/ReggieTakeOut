@@ -24,7 +24,7 @@ public class WebMvcConfig extends WebMvcConfigurationSupport {
      * @Description: 设置资源映射
      * @Param: registry
      * @return:
-     * @Author: lydms
+     * @Author: jlw
      * @Date:
      */
     @Override
