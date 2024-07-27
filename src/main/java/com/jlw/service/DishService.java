@@ -5,6 +5,8 @@ import com.jlw.dto.DishDto;
 import com.jlw.pojo.Dish;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public interface DishService extends IService<Dish> {
 
@@ -13,4 +15,9 @@ public interface DishService extends IService<Dish> {
     public DishDto getByIdWithFlavor(Long id);
 
     void updateWithFlavor(DishDto dishDto);
+
+    void outOfStock(List<String> ids);
+
+
+    void inStock(List<String> ids);
 }

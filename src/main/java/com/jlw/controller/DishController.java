@@ -139,5 +139,10 @@ public class DishController {
 
         return R.success(list);
     }
+    @PostMapping("/{ids}")
+    public R<String> ids(Integer ids){
+        log.info("删除的ids是{}",ids);
+        return null;
+    }
 
 }

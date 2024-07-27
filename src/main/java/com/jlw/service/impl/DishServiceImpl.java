@@ -28,6 +28,9 @@ import java.util.stream.Collectors;
 public class DishServiceImpl extends ServiceImpl<DishMapper, Dish> implements DishService {
     @Autowired
     private DishFlavorService dishFlavorService;
+
+    @Autowired
+    private DishMapper dishMapper;
     /** 
     * @Description: 新增菜品，同时保存对应口味数据
     * @Param: 
@@ -95,5 +98,15 @@ public class DishServiceImpl extends ServiceImpl<DishMapper, Dish> implements Di
         dishFlavorService.saveBatch(flavors);
 
 
+    }
+
+    @Override
+    public void outOfStock(List<String> ids) {
+        dishMapper.outOfStock(ids);
+    }
+
+    @Override
+    public void inStock(List<String> ids) {
+        dishMapper.inStock(ids);
     }
 }
